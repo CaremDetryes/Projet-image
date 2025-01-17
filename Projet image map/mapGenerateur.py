@@ -15,7 +15,7 @@ def imageOverlay(img_list):
         for y in range(n):
             color = sumPixel((x,y),img_list)
             overlayMap.putpixel((x,y), color)
-    print("\nColoriage fini")
+    print()
     return overlayMap
 
 def sumPixel(coordonnees, img_list):
@@ -33,14 +33,4 @@ def sumPixel(coordonnees, img_list):
 
 def resizeImageList(img_list, img_size):
     for i in range(len(img_list)-1):
-        img_list[i] = img_list[i].resize(img_size)
-    
-dossier = "ImageGalaxie/"    
-
-def GenerateMap(img_list):
-    
-    map = imageOverlay(img_list)
-    map.save(dossier+"map.png")
-    
-    print("fini !")
-
+        img_list[i] = img_list[i].resize(img_size) 
