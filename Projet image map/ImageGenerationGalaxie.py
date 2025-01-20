@@ -32,7 +32,7 @@ def main():
     for i, ax in enumerate(axes.flat):
         if i < len(galaxies_list):
             ax.imshow(galaxies_list[i][0])
-            ax.text(0.5, 0.5, f"Liste 1 : {galaxies_list[i][1]}\nListe 2 : {galaxies_list[i][2]}",
+            ax.text(0.5, 0.5, f"Liste proba : {galaxies_list[i][1]}\nListe smooth : {galaxies_list[i][2]}",
                 fontsize=10, ha='center', va='bottom', transform=ax.transAxes)
         ax.axis('off')       
 
@@ -43,7 +43,7 @@ def main():
 def PutPixel(img, x, y, proba) :
     rand = rd.random()
     if rand < proba :
-        img.putpixel((x,y), (rd.randint(128,255),rd.randint(64,160),rd.randint(64,160)))
+        img.putpixel((x,y), (rd.randint(0,255),rd.randint(0,255),rd.randint(0,255)))
     return img
         
 def GenerateImage(size_level, probability, nbSmooth) :
